@@ -1,0 +1,64 @@
+//  pattern set for noun and verb groups
+
+pattern set chunks;
+
+//  patterns for noun groups
+
+ng :=
+    det-pos? [constit cat=q]? quant-colloq? [constit cat=adj]* [constit cat=n]+ |
+  	proper-noun |
+		[constit cat=pro];
+
+// Added possession form for proper nouns. Also added adj before the nouns.
+det-pos	:=	[constit cat=det] |
+    [constit cat=det]? [constit cat=adj]* [constit cat=n number=singular] "'s" |
+    [constit cat=det]? [constit cat=adj]* proper-noun "'s";
+
+proper-noun := ([token case=cap] | [undefinedCap])+;
+
+// Quantifier of colloquial form.
+quant-colloq := [constit cat=n] "of";
+
+when ng	add [ngroup];
+
+//  patterns for active verb groups
+
+vg :=	[constit cat=tv] |
+    [constit cat=w] vg-inf |
+    [constit cat=w] "do" |
+    tv-vbe vg-ving;
+
+vg-inf :=	[constit cat=v] |
+    "be" vg-ving;
+
+vg-ven :=	[constit cat=ven] |
+    "been" vg-ving | 
+    "been" [constit cat=ven];
+
+vg-ving :=	[constit cat=ving] |
+    "being" [constit cat=ven];
+
+tv-vbe :=	"is" | "are" | "was" | "were";
+
+tv-vbp := "have" | "has" | "had";
+
+when vg add [constit cat=vgroup];
+
+//  patterns for passive verb groups
+
+vg-pass := tv-vbe [constit cat=ven] |
+    [constit cat=w] "be" [constit cat=ven];
+
+when vg-pass add [constit cat=vgroup-pass];
+
+//  pattern for infinitival verb groups
+
+to-vg := vg-inf;
+
+when to-vg add [constit cat=vgroup-inf];
+
+vg-perf := tv-vbp vg-ven |
+    [constit cat=w] tv-vbp vg-ven;
+
+when vg-perf add [constit cat=vgroup-perf];
+

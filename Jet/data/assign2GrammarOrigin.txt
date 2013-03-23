@@ -1,0 +1,2 @@
+sentence :=  np v | np v np;
+np     :=  n | art n | adj n | art adj n;

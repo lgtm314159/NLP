@@ -1,0 +1,64 @@
+1. 1) Tow trees
+      /* Find them in xinjuny@gmail.com Google drive */
+
+   2) Suggested constraint: Distinguish between transitive and intransitive verbs. This can be achived by adding rules to the grammar to enforce that transitive verbs can subcategorize for an NP or a non-finite VP, while intransitive verbs can only subcategorize for a non-finite VP or a PP. In the example provided, 'features' is a transitive verb, and 'live' when considered a verb is an intransitive verb, and what follows 'live' is a noun 'music', thus the ambiguity can be resolved by this constraint.
+
+2. 1) Top-Down Backtracking - sentence:1, np:4
+      Chart Parser - sentence:1, np:3
+   2) Top-Down Backtracking - sentence:3, np:5
+      Bottom-Up - sentence:7, np:6
+      Chart Parser - sentence:3, np:3
+
+3. Modified grammar:
+   sentence := threeSgNp v | nonThreeSgNp vs | X1 | X2;
+   X1 := threeSgNp v threeSgNp | threeSgNp v nonThreeSgNp ;
+   X2 := nonThreeSgNp vs threeSgNp | nonThreeSgNp vs nonThreeSgNp ;
+   threeSgNp := n | art n | adj n | art adj n;
+   nonThreeSgNp := ns | art ns | adj ns | art adj ns;
+
+   And the dictionary file has the content below:
+   /************Separating Line**************/
+    my,,    cat = art;
+    the,,   cat = art;
+    old,,   cat = adj;
+    young,, cat = adj;
+    cat,,   cat = n;
+    cats,,  cat = ns; 
+    mouse,, cat = n;
+    mice,,  cat = ns; 
+    chase,, cat = vs; 
+    chases,,  cat = v;
+    with,,  cat = p;
+    relish,,  cat = n;
+    play,,  cat = vs; 
+    plays,, cat = v;
+    football,, cat = n;
+    footballs,, cat = ns; 
+    fair,, cat = n;
+    fair,, cat = adj;
+    answers,, cat = v;
+    answer,, cat = vs; 
+    answers,, cat = ns; 
+    answer,, cat = n;
+    questions,, cat = ns; 
+    question,, cat = n;
+    questions,, cat = v;
+    question,, cat = vs; 
+    lives,, cat = v;
+    live,, cat = vs; 
+    live,, cat = adj;
+    music,, cat = n;
+    features,, cat = v;
+    feature,, cat = vs; 
+    features,, cat = ns; 
+    feature,, cat = n;
+   /************Separating Line**************/
+
+   Using this new grammer and dictionary, the parse of "The fair answers questions" only returns one parse which is consistent with the subject-verb number agreement.
+
+4. J&M excercise 5.1
+   1. Atlanta should be tagged as NNP
+   2. dinner should be tagged as NN
+   3. have should be tagged as VBP
+   4. Can should be tagged as MD
+

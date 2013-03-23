@@ -1,0 +1,5 @@
+sentence := threeSgNp v | nonThreeSgNp vs | X1 | X2;
+X1 := threeSgNp v threeSgNp | threeSgNp v nonThreeSgNp ;
+X2 := nonThreeSgNp vs threeSgNp | nonThreeSgNp vs nonThreeSgNp ;
+threeSgNp := n | art n | adj n | art adj n;
+nonThreeSgNp := ns | art ns | adj ns | art adj ns;

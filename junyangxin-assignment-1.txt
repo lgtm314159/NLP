@@ -1,0 +1,152 @@
+(1) Determin structures:
+
+a) [S [VP [Verb "Show"] [NP [Det "the"] [Nominal [Nominal [Noun "airlines"]] [PP [Preposition "with"] [NP [Norminal [Nominal [Noun "flights"]] [PP [Preposition "to"] [NP [Proper-Noun "Boston"]]]]]]]]]]
+
+b) [S [VP [Verb "Show"] [NP [Det "the"] [Nominal [Nominal [Noun "airlines"]] [RelClause ["that"] [VP [Verb "fly"] [PP [Preposition "to"] [NP [Proper-Noun "Boston"]]]]]]]]]
+
+c) [S [NP [Pronoun "I"]] [VP [Verb "need"] ["to"] [VP [Verb "know"] [NP [NP [Det "the"] [Nominal [Noun "aircraft"]]] ["and"] [NP [Nominal [Noun "flight"] [Nominal [Noun "number"]]]]]]]]
+
+d) [S [Aux "Do"] [NP [Pronoun "you"]] [VP [Verb "prefer] ["to"] [VP [Verb "go"] [PP [Preposition "to"] [NP [Proper-Noun "Boston"]]]]]]
+
+(2) Argument (actually I rewrote) the rules of the J&M grammars to handle pronouns (plus singular and plural nouns) properly:
+
+S -> 3sg-nomi-NP 3sg-VP | non-3sg-nomi-NP non-3sg-VP | non-3sg-VP | 3sg-aux 3sg-nomi-NP non-3sg-VP | non-3sg-aux non-3sg-nomi-NP non-3sg-VP | Wh-NP 3sg-aux 3sg-nomi-NP non-3sg-VP | Wh-NP non-3sg-aux non-3sg-nomi-NP non-3sg-VP | S and S
+
+3sg-aux -> does | has | can | is | ...
+
+non-3sg-aux -> do | have | can | are | ...
+
+3sg-verb -> eats | likes | wants | goes | ...
+
+non-3sg-verb -> eat | like | want | go | ...
+
+3sg-nomi-pronoun -> he | she | it
+
+non-3sg-nomi-pronoun -> I | you | we | they
+
+accu-pronoun -> me | you | him | her | it | us | them
+
+3sg-nomi-NP -> 3sg-nomi-pronoun | singular-proper-noun | (Det) (Card) (Ord) (Quant) (AP) singular-nominal
+
+non-3sg-nomi-NP -> non-3sg-nomi-pronoun | plural-proper-noun | (Det) (Card) (Ord) (Quant) (AP) plural-nominal | non-3sg-nomi-NP and non-3sg-nomi-NP | non-3sg-nomi-NP and pluralized-3sg-nomi-NP | pluralized-3sg-nomi-NP and non-3sg-nomi-NP | pluralized-3sg-nomi-NP and pluralized-3sg-nomi-NP 
+
+pluralized-3sg-nomi-NP -> pluralized-3sg-nomi-NP and pluralized-3sg-nomi-NP | 3sg-nomi-NP
+
+accu-NP -> accu-pronoun | singular-proper-noun | plural-proper-noun | (Det) (Card) (Ord) (Quant) (AP) (singular-nominal | plural-nominal) | accu-NP and accu-NP
+
+singular-proper-noun -> Boston | New York | Chicago | ...
+
+plural-proper-noun -> Smiths | Michael Douglas 2nds | ...
+
+singular-nominal -> singular-noun singular-nominal | singular-noun | singular-nominal PP (PP) (PP) | singular-nominal GerundVP | singular-nominal 3sg-RelClause
+
+plural-nominal -> plural-noun plural-nominal | plural-noun | plural-nominal PP (PP) (PP) | plural-nominal GerundVP | plural-nominal non-3sg-RelClause
+
+singular-noun -> flight | fare | dollar | reservation | ...
+
+plural-noun -> flights | fares | dollars | reservations | ...
+
+3sg-VP -> 3sg-verb | 3sg-verb accu-NP | 3sg-verb accu-NP PP | 3sg-verb PP | 3sg-verb S | 3sg-verb to non-3sg-VP | 3sg-VP and 3sg-VP
+
+non-3sg-VP -> non-3sg-verb | non-3sg-verb accu-NP | non-3sg-verb accu-NP PP | non-3sg-verb PP | non-3sg-verb S | non-3sg-verb to non-3sg-VP | non-3sg-VP and non-3sg-VP
+
+PP -> Preposition accu-NP
+
+GerundVP -> GerundV | GerundV accu-NP | GerundV PP | GerundV accu-NP PP
+
+3sg-RelClause -> (who | that) 3sg-VP
+
+non-3sg-RelClause -> (who | that) non-3sg-VP
+
+3) Jet parsing
+---------
+Sentence:                               my cat plays the football
+Seeking sentence                        +
+Seeking np                              +
+Seeking n                               +
+Seeking art                             +
+Found   art = my                        ===
+Seeking n                                  +
+Found   n = cat                            ====
+Found   np = my cat                     =======
+Seeking vp                                     +
+Seeking v                                      +
+Found   v = plays                              ======
+Found   vp = plays                             ======
+Found   sentence = my cat plays         =============
+Seeking v                                      +
+Found   v = plays                              ======
+Seeking np                                           +
+Seeking n                                            +
+Seeking art                                          +
+Found   art = the                                    ====
+Seeking n                                                +
+Found   n = football                                     ========
+Found   np = the football                            ============
+Found   vp = plays the football                ==================
+Found   sentence = my cat plays the football
+                                        =========================
+Sentence parsed.
+Seeking art                                          +
+Found   art = the                                    ====
+Seeking adj                                              +
+Seeking art                             +
+Found   art = my                        ===
+Seeking adj                                +
+1 parse(s) obtained
+Parse:
+sentence
+    np
+        art = my 
+        n = cat 
+    vp
+        v = plays 
+        np
+            art = the 
+            n = football
+
+---------
+Sentence:                               my mice chases the footballs
+Seeking sentence                        +
+Seeking np                              +
+Seeking n                               +
+Seeking art                             +
+Found   art = my                        ===
+Seeking n                                  +
+Found   n = mice                           =====
+Found   np = my mice                    ========
+Seeking vp                                      +
+Seeking v                                       +
+Found   v = chases                              =======
+Found   vp = chases                             =======
+Found   sentence = my mice chases       ===============
+Seeking v                                       +
+Found   v = chases                              =======
+Seeking np                                             +
+Seeking n                                              +
+Seeking art                                            +
+Found   art = the                                      ====
+Seeking n                                                  +
+Found   n = footballs                                      =========
+Found   np = the footballs                             =============
+Found   vp = chases the footballs               ====================
+Found   sentence = my mice chases the footballs
+                                        ============================
+Sentence parsed.
+Seeking art                                            +
+Found   art = the                                      ====
+Seeking adj                                                +
+Seeking art                             +
+Found   art = my                        ===
+Seeking adj                                +
+1 parse(s) obtained
+Parse:
+sentence
+    np
+        art = my 
+        n = mice 
+    vp
+        v = chases 
+        np
+            art = the 
+            n = footballs
