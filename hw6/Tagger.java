@@ -7,35 +7,41 @@ import java.util.HashMap;
 public class Tagger {
   public static void main(String[] args) throws IOException {
     Tagger tagger = new Tagger();
-    /*
     tagger.tagWithModel1();
     tagger.tagWithModel2();
     tagger.tagWithModel3();
     tagger.tagWithModel4();
     tagger.tagWithModel5();
     tagger.tagWithModel6();
+    tagger.tagWithModel7();
+    tagger.tagWithModel8();
     tagger.evaluate("test.txt", "results1");
     tagger.evaluate("test.txt", "results2");
     tagger.evaluate("test.txt", "results3");
     tagger.evaluate("test.txt", "results4");
     tagger.evaluate("test.txt", "results5");
     tagger.evaluate("test.txt", "results6");
-    */
-    /*
-    tagger.produceNgroups("test.txt", "testNGroups");
-    tagger.produceNgroups("results1", "resNGroups1");
-    tagger.produceNgroups("results2", "resNGroups2");
-    tagger.produceNgroups("results3", "resNGroups3");
-    tagger.produceNgroups("results4", "resNGroups4");
-    tagger.produceNgroups("results5", "resNGroups5");
-    tagger.produceNgroups("results6", "resNGroups6");
-    */
-    tagger.calcNgroupPrecisionAndRecall("testNGroups", "resNGroups1");
-    tagger.calcNgroupPrecisionAndRecall("testNGroups", "resNGroups2");
-    tagger.calcNgroupPrecisionAndRecall("testNGroups", "resNGroups3");
-    tagger.calcNgroupPrecisionAndRecall("testNGroups", "resNGroups4");
-    tagger.calcNgroupPrecisionAndRecall("testNGroups", "resNGroups5");
-    tagger.calcNgroupPrecisionAndRecall("testNGroups", "resNGroups6");
+    tagger.evaluate("test.txt", "results7");
+    tagger.evaluate("test.txt", "results8");
+    
+    tagger.produceNgroups("test.txt", "testNgroups");
+    tagger.produceNgroups("results1", "resNgroups1");
+    tagger.produceNgroups("results2", "resNgroups2");
+    tagger.produceNgroups("results3", "resNgroups3");
+    tagger.produceNgroups("results4", "resNgroups4");
+    tagger.produceNgroups("results5", "resNgroups5");
+    tagger.produceNgroups("results6", "resNgroups6");
+    tagger.produceNgroups("results7", "resNgroups7");
+    tagger.produceNgroups("results8", "resNgroups8");
+    
+    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups1");
+    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups2");
+    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups3");
+    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups4");
+    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups5");
+    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups6");
+    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups7");
+    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups8");
   }
 
   private void tagWithModel1() throws IOException {
@@ -192,6 +198,101 @@ public class Tagger {
     out.flush();
   }
 
+
+  private void tagWithModel5() throws IOException {
+    GISModel m =
+        (GISModel) new SuffixSensitiveGISModelReader(new File("model5")).getModel();
+ 
+    FileInputStream fis = new FileInputStream("test.txt");
+    DataInputStream dis = new DataInputStream(fis);
+    BufferedReader br = new BufferedReader(new InputStreamReader(dis));
+    PrintWriter out =
+        new PrintWriter(new BufferedWriter(new FileWriter("results5")));
+    String line;
+    String[] prevLine = null;
+    String[] features = null;
+    while ((line = br.readLine()) != null) {
+      if (!line.isEmpty()) { 
+        String[] strs = line.split(" ");
+        if (prevLine != null) {
+          // Tag the previous line.
+          features[12] = "next=" + strs[0];
+          features[13] = "nextPos=" + strs[1];
+          String tag = m.getBestOutcome(m.eval(features));
+          out.println(prevLine[0] + " " + prevLine[1] + " " + tag);
+          
+          // Make featuresf for the current line.
+          features = new String[14];
+          features[0] = "prev=" + prevLine[0];
+          features[1] = "prevPos=" + prevLine[1];
+        } else {
+          features = new String[14];
+          features[0] = "prev=null";
+          features[1] = "prevPos=null";
+        }
+        features[2] = "current=" + strs[0];
+        features[3] = "pos=" + strs[1];
+        features[4] = "isInitialCap=" + Character.isUpperCase(strs[0].charAt(0));
+        if (strs[0].length() >= 3) {
+          features[5] = "isSuffixIng=" +
+              strs[0].substring(strs[0].length() - 3).equals("ing");
+        } else {
+          features[5] = "isSuffixIng=false";
+        }
+
+        // Add more shape features.
+        boolean isAllUpper = true;
+        for (int i = 0; i < strs[0].length(); ++i) {
+          if (Character.isLowerCase(strs[0].charAt(i))) {
+            isAllUpper = false;
+            break;
+          }
+        }
+        boolean isAllLower = true;
+        for (int i = 0; i < strs[0].length(); ++i) {
+          if (Character.isUpperCase(strs[0].charAt(i))) {
+            isAllLower = false;
+            break;
+          }
+        }
+        boolean isMixedCase = false;
+        if (!isAllUpper && !isAllLower) {
+          isMixedCase = true;
+        }
+        features[6] = "isAllUpper=" + isAllUpper;
+        features[7] = "isAllLower=" + isAllLower;
+        features[8] = "isMixedCase=" + isMixedCase;
+        if (strs[0].length() >= 2 &&
+            Character.isUpperCase(strs[0].charAt(0)) &&
+            strs[0].charAt(1) == '.') {
+          features[9] = "capInitWithPeriod=true";
+        } else {
+          features[9] = "capInitWithPeriod=false";
+        }
+        if (Character.isDigit(strs[0].charAt(strs[0].length() - 1))) {
+          features[10] = "endWithDigit=true";
+        } else {
+          features[10] = "endWithDigit=false";
+        }
+        if (strs[0].indexOf("-") != -1) {
+          features[11] = "hasHyphen=true";
+        } else {
+          features[11] = "hasHyphen=false";
+        }
+
+        prevLine = strs;
+      } else {
+        features[12] = "next=null";
+        features[13] = "nextPos=null";
+        String tag = m.getBestOutcome(m.eval(features));
+        out.println(prevLine[0] + " " + prevLine[1] + " " + tag);
+        out.println();
+        prevLine = null;
+      }
+    }
+    out.flush();
+  }
+
   private void tagWithModel6() throws IOException {
     GISModel m =
         (GISModel) new SuffixSensitiveGISModelReader(new File("model6")).getModel();
@@ -290,15 +391,15 @@ public class Tagger {
     out.flush();
   }
 
-  private void tagWithModel5() throws IOException {
+  private void tagWithModel7() throws IOException {
     GISModel m =
-        (GISModel) new SuffixSensitiveGISModelReader(new File("model5")).getModel();
+        (GISModel) new SuffixSensitiveGISModelReader(new File("model7")).getModel();
  
     FileInputStream fis = new FileInputStream("test.txt");
     DataInputStream dis = new DataInputStream(fis);
     BufferedReader br = new BufferedReader(new InputStreamReader(dis));
     PrintWriter out =
-        new PrintWriter(new BufferedWriter(new FileWriter("results5")));
+        new PrintWriter(new BufferedWriter(new FileWriter("results7")));
     String line;
     String[] prevLine = null;
     String[] features = null;
@@ -307,28 +408,31 @@ public class Tagger {
         String[] strs = line.split(" ");
         if (prevLine != null) {
           // Tag the previous line.
-          features[12] = "next=" + strs[0];
-          features[13] = "nextPos=" + strs[1];
+          features[14] = "next=" + strs[0];
+          features[15] = "nextPos=" + strs[1];
+          features[16] = "nextTag=" + strs[2];
           String tag = m.getBestOutcome(m.eval(features));
           out.println(prevLine[0] + " " + prevLine[1] + " " + tag);
           
           // Make featuresf for the current line.
-          features = new String[14];
+          features = new String[17];
           features[0] = "prev=" + prevLine[0];
           features[1] = "prevPos=" + prevLine[1];
+          features[2] = "prevTag=" + prevLine[2];
         } else {
-          features = new String[14];
+          features = new String[17];
           features[0] = "prev=null";
           features[1] = "prevPos=null";
+          features[2] = "prevTag=null";
         }
-        features[2] = "current=" + strs[0];
-        features[3] = "pos=" + strs[1];
-        features[4] = "isInitialCap=" + Character.isUpperCase(strs[0].charAt(0));
+        features[3] = "current=" + strs[0];
+        features[4] = "pos=" + strs[1];
+        features[5] = "isInitialCap=" + Character.isUpperCase(strs[0].charAt(0));
         if (strs[0].length() >= 3) {
-          features[5] = "isSuffixIng=" +
+          features[6] = "isSuffixIng=" +
               strs[0].substring(strs[0].length() - 3).equals("ing");
         } else {
-          features[5] = "isSuffixIng=false";
+          features[6] = "isSuffixIng=false";
         }
 
         // Add more shape features.
@@ -350,31 +454,36 @@ public class Tagger {
         if (!isAllUpper && !isAllLower) {
           isMixedCase = true;
         }
-        features[6] = "isAllUpper=" + isAllUpper;
-        features[7] = "isAllLower=" + isAllLower;
-        features[8] = "isMixedCase=" + isMixedCase;
+        features[7] = "isAllUpper=" + isAllUpper;
+        features[8] = "isAllLower=" + isAllLower;
+        features[9] = "isMixedCase=" + isMixedCase;
         if (strs[0].length() >= 2 &&
             Character.isUpperCase(strs[0].charAt(0)) &&
             strs[0].charAt(1) == '.') {
-          features[9] = "capInitWithPeriod=true";
+          features[10] = "capInitWithPeriod=true";
         } else {
-          features[9] = "capInitWithPeriod=false";
+          features[10] = "capInitWithPeriod=false";
         }
         if (Character.isDigit(strs[0].charAt(strs[0].length() - 1))) {
-          features[10] = "endWithDigit=true";
+          features[11] = "endWithDigit=true";
         } else {
-          features[10] = "endWithDigit=false";
+          features[11] = "endWithDigit=false";
         }
         if (strs[0].indexOf("-") != -1) {
-          features[11] = "hasHyphen=true";
+          features[12] = "hasHyphen=true";
         } else {
-          features[11] = "hasHyphen=false";
+          features[12] = "hasHyphen=false";
         }
+        Stemmer s = new Stemmer();
+        s.add(strs[0].toCharArray(), strs[0].length());
+        s.stem();
+        features[13] = s.toString();
 
         prevLine = strs;
       } else {
-        features[12] = "next=null";
-        features[13] = "nextPos=null";
+        features[14] = "next=null";
+        features[15] = "nextPos=null";
+        features[16] = "nextTag=null";
         String tag = m.getBestOutcome(m.eval(features));
         out.println(prevLine[0] + " " + prevLine[1] + " " + tag);
         out.println();
@@ -383,6 +492,7 @@ public class Tagger {
     }
     out.flush();
   }
+
   private void evaluate(String testFile, String resultFile) throws IOException {
     int correct = 0;
     FileInputStream fis1 = new FileInputStream(testFile);
@@ -479,6 +589,56 @@ public class Tagger {
     System.out.println("precision:" + precision + " " + "recall:" + recall);
   }
 
+  private void tagWithModel8() throws IOException {
+    GISModel m =
+        (GISModel) new SuffixSensitiveGISModelReader(new File("model8")).getModel();
+ 
+    FileInputStream fis = new FileInputStream("test.txt");
+    DataInputStream dis = new DataInputStream(fis);
+    BufferedReader br = new BufferedReader(new InputStreamReader(dis));
+    PrintWriter out =
+        new PrintWriter(new BufferedWriter(new FileWriter("results8")));
+    String line;
+    String[] prevLine = null;
+    String[] features = null;
+    while ((line = br.readLine()) != null) {
+      if (!line.isEmpty()) { 
+        String[] strs = line.split(" ");
+        if (prevLine != null) {
+          // Tag the previous line.
+          features[6] = "next=" + strs[0];
+          features[7] = "nextPos=" + strs[1];
+          features[8] = "nextTag=" + strs[2];
+          String tag = m.getBestOutcome(m.eval(features));
+          out.println(prevLine[0] + " " + prevLine[1] + " " + tag);
+          
+          // Make featuresf for the current line.
+          features = new String[9];
+          features[0] = "prev=" + prevLine[0];
+          features[1] = "prevPos=" + prevLine[1];
+          features[2] = "prevTag=" + prevLine[2];
+        } else {
+          features = new String[9];
+          features[0] = "prev=null";
+          features[1] = "prevPos=null";
+          features[2] = "prevTag=null";
+        }
+        features[3] = "current=" + strs[0];
+        features[4] = "pos=" + strs[1];
+        features[5] = "isInitialCap=" + Character.isUpperCase(strs[0].charAt(0));
+        prevLine = strs;
+      } else {
+        features[6] = "next=null";
+        features[7] = "nextPos=null";
+        features[8] = "nextTag=null";
+        String tag = m.getBestOutcome(m.eval(features));
+        out.println(prevLine[0] + " " + prevLine[1] + " " + tag);
+        out.println();
+        prevLine = null;
+      }
+    }
+    out.flush();
+  }
 
   private void produceNgroups(String resultFile, String ngroupFile)
       throws IOException {
