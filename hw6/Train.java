@@ -31,8 +31,8 @@ public class Train {
     //t.trainWithSpecFeatureSet("events6", "model6");
     //t.procWithFeatureSet7();
     //t.trainWithSpecFeatureSet("events7", "model7");
-    t.procWithFeatureSet8();
-    t.trainWithSpecFeatureSet("events8", "model8");
+    //t.procWithFeatureSet8();
+    //t.trainWithSpecFeatureSet("events8", "model8");
   }
 
   private void procWithFeatureSet1() throws IOException {

@@ -33,6 +33,7 @@ public class Tagger {
     tagger.produceNgroups("results6", "resNgroups6");
     tagger.produceNgroups("results7", "resNgroups7");
     tagger.produceNgroups("results8", "resNgroups8");
+    tagger.produceNgroups("resultsVit", "resNgroupsVit");
     
     tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups1");
     tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups2");
@@ -42,6 +43,7 @@ public class Tagger {
     tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups6");
     tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups7");
     tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups8");
+    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroupsVit");
   }
 
   private void tagWithModel1() throws IOException {
