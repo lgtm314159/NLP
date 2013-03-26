@@ -24,16 +24,6 @@ public class Tagger {
       System.out.print("Model" + (i + 1) + ": ");
       tagger.evaluate("test.txt", "results" + (i + 1));
     }
-    /*
-    tagger.evaluate("test.txt", "results1");
-    tagger.evaluate("test.txt", "results2");
-    tagger.evaluate("test.txt", "results3");
-    tagger.evaluate("test.txt", "results4");
-    tagger.evaluate("test.txt", "results5");
-    tagger.evaluate("test.txt", "results6");
-    tagger.evaluate("test.txt", "results7");
-    tagger.evaluate("test.txt", "results8");
-    */
     System.out.print("Model1 with Viterbi-simple: ");
     tagger.evaluate("test.txt", "resultsVitModel1Simple");
     System.out.print("Model1 with Viterbi-complex: ");
@@ -62,16 +52,6 @@ public class Tagger {
       System.out.print("Measures of model" + (i + 1) + ": ");
       tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups" + (i + 1));
     }
-    /*
-    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups1");
-    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups2");
-    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups3");
-    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups4");
-    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups5");
-    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups6");
-    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups7");
-    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups8");
-    */
     System.out.print("Measures of model1 with Viterbi-simple: ");
     tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroupsVitModel1Simple");
     System.out.print("Measures of model1 with Viterbi-complex: ");
@@ -80,12 +60,6 @@ public class Tagger {
     tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroupsVitModel8Simple");
     System.out.print("Measures of model8 with Viterbi-complex: ");
     tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroupsVitModel8Complex");
-    /*
-    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroupsVitModel1Simple");
-    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroupsVitModel1Complex");
-    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroupsVitModel8Simple");
-    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroupsVitModel8Complex");
-    */
   }
 
   private void tagWithModel1() throws IOException {

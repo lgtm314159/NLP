@@ -100,7 +100,7 @@ the DT I
 vast JJ I
 international JJ I
 reordering NN I
-that DT B
+that DT I
 implies VBZ O
 , , O
 wo MD O
@@ -138,7 +138,7 @@ map NN I
 Which WDT I
 is VBZ O
 what WP I
-the DT B
+the DT I
 Old NNP I
 Guard NNP I
 fears NNS I
@@ -165,7 +165,7 @@ GDR NNP I
 future NN I
 as IN O
 a DT I
-separately RB I
+separately RB O
 identifiable JJ I
 state NN I
 , , O
@@ -177,7 +177,7 @@ Simmons NNP I
 a DT I
 British JJ I
 journalist NN I
-whose WP$ B
+whose WP$ I
 book NN I
 on IN O
 East NNP I
@@ -206,7 +206,7 @@ has VBZ O
 consisted VBN O
 of IN O
 a DT I
-dogged VBN I
+dogged VBN O
 effort NN I
 by IN O
 former JJ I
@@ -243,7 +243,7 @@ consumer NN I
 paradise NN I
 . . O
 
-Neither CC I
+Neither CC O
 man NN I
 achieved VBD O
 perfection NN I
@@ -283,7 +283,7 @@ systems NNS I
 The DT I
 less-self-confident JJ I
 Czechoslovaks NNPS I
-and CC I
+and CC O
 Bulgarians NNPS I
 , , O
 in IN O
@@ -298,8 +298,8 @@ reform VB O
 while IN O
 doing VBG O
 nothing NN I
-concrete JJ O
-about IN I
+concrete JJ I
+about IN O
 it PRP I
 . . O
 
@@ -314,7 +314,7 @@ Mr. NNP I
 Gorbachev NNP I
 's POS B
 speeches NNS I
-only RB O
+only RB I
 as IN O
 sketchy JJ I
 summaries NNS I
@@ -425,7 +425,7 @@ Herrman NNP I
 confessed VBD O
 to TO O
 a DT I
-`` `` I
+`` `` O
 grave JJ I
 concern NN I
 '' '' O
@@ -441,7 +441,7 @@ banner NN I
 that WDT B
 proclaims VBZ O
 the DT I
-` `` I
+` `` O
 renewal NN I
 of IN O
 socialism NN I
@@ -491,7 +491,7 @@ The DT I
 first JJ I
 signs NNS I
 were VBD O
-economic JJ O
+economic JJ I
 . . O
 
 Despite IN O
@@ -552,10 +552,10 @@ raised VBN O
 the DT I
 notion NN I
 of IN O
-introducing VBG I
+introducing VBG O
 democracy NN I
 , , O
-at IN I
+at IN O
 least JJS I
 in IN O
 the DT I
@@ -572,9 +572,9 @@ movement NN I
 was VBD O
 saying VBG O
 out IN O
-loud JJ O
+loud JJ I
 what WP I
-it PRP B
+it PRP I
 had VBD O
 only RB I
 whispered VBN O
@@ -584,12 +584,12 @@ before RB O
 But CC O
 they PRP I
 are VBP O
-stalwart JJ O
+stalwart JJ I
 socialists NNS I
 . . O
 
 Their PRP$ I
-proclaimed VBD I
+proclaimed VBD O
 purpose NN I
 is VBZ O
 to TO O
@@ -616,12 +616,12 @@ pastors NNS I
 has VBZ O
 envisioned VBN O
 a DT I
-`` `` I
+`` `` O
 new JJ I
 utopia NN I
 '' '' O
 of IN O
-`` `` I
+`` `` O
 creative JJ I
 socialism NN I
 . . O
@@ -665,7 +665,7 @@ the DT I
 postwar JJ I
 generation NN I
 of IN O
-committed VBN I
+committed VBN O
 Communist NNP I
 leaders NNS I
 in IN O
@@ -682,11 +682,11 @@ Moscow NNP I
 He PRP I
 was VBD O
 a DT I
-`` `` I
+`` `` O
 socialist JJ I
 warrior NN I
 '' '' O
-who WP I
+who WP B
 felt VBD O
 rankled VBN O
 by IN O
@@ -717,7 +717,7 @@ Finally RB O
 during IN O
 his PRP$ I
 first JJ I
-and CC I
+and CC O
 only JJ I
 state NN I
 visit NN I
@@ -736,7 +736,7 @@ the DT I
 recognition NN I
 he PRP I
 had VBD O
-long JJ O
+long JJ I
 sought VBD O
 . . O
 
@@ -779,7 +779,7 @@ Kohl NNP I
 `` `` O
 It PRP I
 was VBD O
-only RB O
+only RB I
 a DT I
 matter NN I
 of IN O
@@ -807,7 +807,7 @@ to TO O
 % NN I
 , , O
 slightly RB O
-higher JJR O
+higher JJR I
 than IN O
 its PRP$ I
 June NNP I
@@ -854,8 +854,8 @@ at IN O
 in IN O
 1989 CD I
 , , O
-higher JJR O
-than IN I
+higher JJR I
+than IN O
 1988 CD I
 's POS B
 3.6 CD I
@@ -925,7 +925,7 @@ is VBZ O
 expected VBN O
 to TO O
 be VB O
-highest JJS O
+highest JJS I
 in IN O
 Greece NNP I
 , , O
@@ -1043,7 +1043,7 @@ coffee NN I
 was VBD O
 estimated VBN O
 at IN O
-about IN I
+about IN O
 100 CD I
 billion CD I
 won VBD O
@@ -1052,7 +1052,7 @@ $ $ I
 150.7 CD I
 million CD I
 -RRB- ) O
-last JJ B
+last JJ I
 year NN I
 . . O
 
@@ -1081,7 +1081,7 @@ share NN I
 Nestle NNP I
 currently RB O
 has VBZ O
-only RB O
+only RB I
 about IN O
 a DT I
 2 CD I
@@ -1102,7 +1102,7 @@ start VB O
 negotiations NNS I
 soon RB O
 on IN O
-purchasing VBG I
+purchasing VBG O
 natural JJ I
 gas NN I
 from IN O
@@ -1374,7 +1374,7 @@ Republic NNP I
 of IN O
 Singapore NNP I
 's POS B
-leading VBG I
+leading VBG O
 property NN I
 companies NNS I
 , , O
@@ -1387,7 +1387,7 @@ CDL NNP I
 , , O
 were VBD O
 charged VBN O
-yesterday NN I
+yesterday NN B
 with IN O
 criminal JJ I
 breach NN I
@@ -1399,7 +1399,7 @@ some DT I
 Singapore NNP I
 dollars NNS I
 -LRB- ( O
-about IN I
+about IN O
 US$ $ I
 409,000 CD I
 -RRB- ) O
@@ -1428,7 +1428,7 @@ Corrupt NNP I
 Practices NNP I
 Investigation NNP I
 Bureau NNP I
-Tuesday NNP B
+Tuesday NNP I
 night NN I
 . . O
 
@@ -1469,7 +1469,7 @@ in IN O
 a DT I
 subordinate JJ I
 court NN I
-and CC I
+and CC O
 released VBN O
 on IN O
 bail NN I
@@ -1524,7 +1524,7 @@ say VBP O
 
 The DT I
 Queks NNPS I
-control NN O
+control NN I
 the DT I
 Hong NNP I
 Leong NNP I
@@ -1538,7 +1538,7 @@ in IN O
 manufacturing NN I
 , , O
 property NN I
-and CC I
+and CC O
 finance NN I
 in IN O
 both DT I
@@ -1567,7 +1567,7 @@ Singapore NNP I
 Stock NNP I
 market NN I
 sharply RB O
-lower JJR O
+lower JJR I
 in IN O
 early JJ I
 trading NN I
@@ -1586,11 +1586,11 @@ recovered VBD O
 once RB O
 it PRP I
 became VBD O
-apparent JJ O
+apparent JJ I
 the DT I
 charges NNS I
 were VBD O
-limited JJ O
+limited JJ I
 to TO O
 the DT I
 two CD I
@@ -1623,7 +1623,7 @@ do VB O
 away RB O
 with IN O
 its PRP$ I
-hard JJ I
+hard JJ O
 paper NN I
 after IN O
 a DT I
@@ -1699,7 +1699,7 @@ Wednesday NNP B
 , , O
 October NNP I
 18 CD I
-, , I
+, , O
 1989 CD I
 
 The DT I
@@ -1751,12 +1751,12 @@ banks NNS I
 
 FEDERAL JJ I
 FUNDS NNS I
-: : I
+: : O
 8 CD I
 15\/16 CD I
 % NN I
 high JJ I
-, , I
+, , O
 8 CD I
 5\/8 CD I
 % NN I
@@ -1806,7 +1806,7 @@ Inc NNP I
 
 DISCOUNT NN I
 RATE NN I
-: : I
+: : O
 7 CD I
 % NN I
 . . O
@@ -1946,12 +1946,12 @@ months NNS I
 ; : O
 8 CD I
 % NN I
-three CD B
+three CD I
 months NNS I
 ; : O
 7.98 CD I
 % NN I
-six CD B
+six CD I
 months NNS I
 ; : O
 7.95 CD I
@@ -2011,12 +2011,12 @@ month NN I
 ; : O
 8.48 CD I
 % NN I
-three CD B
+three CD I
 months NNS I
 ; : O
 8.40 CD I
 % NN I
-six CD B
+six CD I
 months NNS I
 . . O
 
@@ -2098,7 +2098,7 @@ to TO O
 8 CD I
 1\/2 CD I
 % NN I
-three CD B
+three CD I
 months NNS I
 ; : O
 8 CD I
@@ -2108,7 +2108,7 @@ to TO O
 8 CD I
 7\/16 CD I
 % NN I
-four CD B
+four CD I
 months NNS I
 ; : O
 8 CD I
@@ -2128,7 +2128,7 @@ to TO O
 8 CD I
 3\/8 CD I
 % NN I
-six CD B
+six CD I
 months NNS I
 . . O
 
@@ -2149,13 +2149,13 @@ month NN I
 8 CD I
 11\/16 CD I
 % NN I
-three CD B
+three CD I
 months NNS I
 ; : O
 8 CD I
 1\/2 CD I
 % NN I
-six CD B
+six CD I
 months NNS I
 ; : O
 8 CD I
@@ -2288,7 +2288,7 @@ Mac NNP I
 -RRB- ) O
 : : O
 
-Posted VBN I
+Posted VBN O
 yields NNS I
 on IN O
 30-year JJ I
@@ -2339,7 +2339,7 @@ Mae NNP I
 -RRB- ) O
 : : O
 
-Posted VBN I
+Posted VBN O
 yields NNS I
 on IN O
 30 CD I
@@ -2434,7 +2434,7 @@ with IN O
 interstate JJ I
 transportation NN I
 of IN O
-stolen VBN I
+stolen VBN O
 property NN I
 . . O
 
@@ -2443,7 +2443,7 @@ and CC O
 General NNP I
 Electric NNP I
 Co. NNP I
-last JJ B
+last JJ I
 month NN I
 filed VBD O
 a DT I
@@ -2582,7 +2582,7 @@ the DT I
 damage NN I
 from IN O
 what WP I
-some DT B
+some DT I
 said VBD O
 was VBD O
 a DT I
@@ -2646,7 +2646,7 @@ outstripped NN I
 the DT I
 competition NN I
 in IN O
-live VB I
+live VB O
 coverage NN I
 of IN O
 the DT I
@@ -2673,7 +2673,7 @@ struck VBD O
 NBC NNP I
 News NNP I
 was VBD O
-unable JJ O
+unable JJ I
 to TO O
 get VB O
 its PRP$ I
@@ -2736,7 +2736,7 @@ happened VBD O
 
 There EX I
 were VBD O
-no DT O
+no DT I
 complaints NNS I
 from IN O
 affiliates NNS I
@@ -2777,7 +2777,7 @@ image NN I
 of IN O
 not RB O
 being VBG O
-aggressive JJ O
+aggressive JJ I
 on IN O
 major JJ I
 breaking NN I
@@ -2813,7 +2813,7 @@ not RB O
 pleased VBN O
 with IN O
 the DT I
-slow JJ I
+slow JJ O
 start NN I
 , , O
 and CC O
@@ -2873,7 +2873,7 @@ were VBD O
 pleased VBN O
 with IN O
 the DT I
-extended VBN I
+extended VBN O
 coverage NN I
 yesterday NN B
 , , O
@@ -2883,7 +2883,7 @@ special JJ I
 five-hour JJ I
 edition NN I
 of IN O
-`` `` I
+`` `` O
 Today NN I
 . . O
 '' '' O
@@ -2926,12 +2926,12 @@ box NN I
 
 It PRP I
 was VBD O
-horrible JJ O
+horrible JJ I
 . . O
 
 The DT I
 comment NN I
-we PRP B
+we PRP I
 're VBP O
 hearing VBG O
 is VBZ O
@@ -2977,7 +2977,7 @@ quake NN I
 postponed VBD O
 the DT I
 third JJ I
-and CC I
+and CC O
 fourth JJ I
 games NNS I
 of IN O
@@ -3005,8 +3005,8 @@ episodes NNS I
 of IN O
 its PRP$ I
 prime-time JJ I
-Wednesday NNP I
-and CC I
+Wednesday NNP B
+and CC O
 Thursday NNP I
 lineups NNS I
 , , O
@@ -3021,7 +3021,7 @@ earthquake NN I
 at IN O
 10 CD I
 p.m. NN I
-last JJ B
+last JJ I
 night NN I
 . . O
 
@@ -3111,7 +3111,7 @@ closed VBD O
 at IN O
 $ $ I
 12 CD I
-a DT B
+a DT I
 share NN I
 , , O
 down RB O
@@ -3155,7 +3155,7 @@ it PRP I
 believed VBD O
 the DT I
 new JJ I
-, , I
+, , O
 lower JJR I
 dividend NN I
 was VBD O
@@ -3229,7 +3229,7 @@ company NN I
 insolvent JJ I
 MeraBank NNP I
 savings NNS I
-and CC I
+and CC O
 loan NN I
 unit NN I
 . . O
@@ -3282,7 +3282,7 @@ company NN I
 based VBN O
 in IN O
 Phoenix NNP I
-, , I
+, , O
 Ariz. NNP I
 , , O
 reflect VB O
@@ -3290,7 +3290,7 @@ continuing VBG I
 problems NNS I
 at IN O
 MeraBank NNP I
-and CC I
+and CC O
 losses NNS I
 in IN O
 real-estate NN I
@@ -3313,7 +3313,7 @@ million CD I
 or CC O
 six CD I
 cents NNS I
-a DT B
+a DT I
 share NN I
 , , O
 from IN O
@@ -3337,7 +3337,7 @@ the DT I
 only JJ I
 company NN I
 unit NN I
-operating VBG O
+operating VBG I
 in IN O
 the DT I
 black NN I
@@ -3378,7 +3378,7 @@ and CC O
 the DT I
 cost NN I
 of IN O
-purchased VBN I
+purchased VBN O
 replacement NN I
 power NN I
 . . O
@@ -3406,7 +3406,7 @@ $ $ I
 2.5 CD I
 million CD I
 profit NN I
-a DT B
+a DT I
 year NN I
 earlier RBR O
 . . O
@@ -3451,7 +3451,7 @@ Pinnacle NNP I
 SunCor NNP I
 Development NNP I
 Co NNP I
-. . I
+. . O
 real-estate NN I
 unit NN I
 's POS B
@@ -3501,7 +3501,7 @@ its PRP$ I
 Malapai NNP I
 Resources NNP I
 Co NNP I
-. . I
+. . O
 uranium-mining NN I
 unit NN I
 narrowed VBD O
@@ -3513,7 +3513,7 @@ from IN O
 $ $ I
 18 CD I
 million CD I
-a DT B
+a DT I
 year NN I
 ago RB O
 , , O
@@ -3548,7 +3548,7 @@ million CD I
 from IN O
 $ $ I
 425,000 CD I
-a DT B
+a DT I
 year NN I
 earlier RBR O
 . . O
@@ -3573,7 +3573,7 @@ said VBD O
 it PRP I
 will MD O
 ask VB O
-as RB I
+as RB O
 many JJ I
 as IN O
 100,000 CD I
@@ -3608,7 +3608,7 @@ by IN O
 Equitec NNP I
 , , O
 a DT I
-financially RB I
+financially RB O
 troubled JJ I
 real-estate NN I
 syndicator NN I
@@ -3624,14 +3624,14 @@ Equitec NNP I
 as IN O
 the DT I
 newly RB I
-formed VBN I
+formed VBN O
 master NN I
 limited JJ I
 partnership NN I
 's POS B
 general JJ I
 partner NN I
-and CC I
+and CC O
 manager NN I
 . . O
 
@@ -3655,14 +3655,14 @@ is VBZ O
 a DT I
 merchant NN I
 bank NN I
-whose WP$ B
+whose WP$ I
 activities NNS I
 include VBP O
 the DT I
 ownership NN I
 , , O
 management NN I
-and CC I
+and CC O
 financial JJ I
 restructuring NN I
 of IN O
@@ -3693,7 +3693,7 @@ the DT I
 transfer NN I
 will MD O
 benefit VB O
-both DT O
+both DT I
 the DT I
 company NN I
 and CC O
@@ -3789,7 +3789,7 @@ closed VBD O
 at IN O
 $ $ I
 2.625 CD I
-a DT B
+a DT I
 share NN I
 , , O
 unchanged JJ O
@@ -3837,7 +3837,7 @@ financial JJ I
 planners NNS I
 between IN O
 1979 CD I
-and CC I
+and CC O
 1984 CD I
 , , O
 raised VBN O
@@ -3856,7 +3856,7 @@ in IN O
 a DT I
 tailspin NN I
 , , O
-legendary JJ O
+legendary JJ I
 Wall NNP I
 Street NNP I
 trader NN I
@@ -3875,7 +3875,7 @@ traders NNS I
 say VBP O
 . . O
 
-Only RB O
+Only RB I
 a DT I
 week NN I
 ago RB O
@@ -3912,7 +3912,7 @@ carrier NN I
 after IN O
 spending VBG O
 an DT I
-estimated VBN I
+estimated VBN O
 $ $ I
 167 CD I
 million CD I
@@ -3983,7 +3983,7 @@ billionnaire NN I
 Warren NNP I
 Buffett NNP I
 , , O
-who WP I
+who WP B
 bought VBD O
 into IN O
 USAir NNP I
@@ -4005,8 +4005,8 @@ Hathaway NNP I
 , , O
 holds VBZ O
 a DT I
-much RB I
-bigger JJR O
+much RB O
+bigger JJR I
 stake NN I
 in IN O
 the DT I
@@ -4037,7 +4037,7 @@ buy-out NN I
 , , O
 the DT I
 airline NN I
-raiding VBG I
+raiding VBG O
 game NN I
 has VBZ O
 been VBN O
@@ -4055,13 +4055,13 @@ stake NN I
 at IN O
 analysts NNS I
 ' POS B
-estimated VBN I
+estimated VBN O
 buy-out NN I
 price NN I
 of IN O
 $ $ I
 80 CD I
-a DT B
+a DT I
 share NN I
 , , O
 Mr. NNP I
@@ -4074,10 +4074,10 @@ roughly RB I
 million CD I
 USAir NNP I
 shares VBZ O
-that DT O
+that DT I
 cost NN I
 him PRP I
-$ $ B
+$ $ I
 45 CD I
 , , O
 on IN O
@@ -4146,8 +4146,8 @@ price NN I
 , , O
 the DT I
 USAir NNP I
-holding VBG O
-represents VBZ I
+holding VBG I
+represents VBZ O
 9 CD I
 % NN I
 of IN O
@@ -4194,7 +4194,7 @@ speculators NNS I
 say VBP O
 they PRP I
 were VBD O
-skeptical JJ O
+skeptical JJ I
 . . O
 
 `` `` O
@@ -4272,7 +4272,7 @@ Mr. NNP I
 Steinhardt NNP I
 abandoned VBD O
 his PRP$ I
-usual JJ I
+usual JJ O
 role NN I
 as IN O
 a DT I
@@ -4291,7 +4291,7 @@ unlike IN O
 Mr. NNP I
 Buffett NNP I
 , , O
-who WP I
+who WP B
 often RB O
 holds VBZ O
 big JJ I
@@ -4307,7 +4307,7 @@ has VBZ O
 n't RB O
 in IN O
 the DT I
-past RB I
+past RB O
 done VBN O
 much JJ I
 long-term JJ I
@@ -4317,7 +4317,7 @@ investing NN I
 Mr. NNP I
 Steinhardt NNP I
 , , O
-who WP I
+who WP B
 runs VBZ O
 about RB I
 $ $ I
@@ -4332,7 +4332,7 @@ his PRP$ I
 name NN I
 as IN O
 a DT I
-gunslinging VBG I
+gunslinging VBG O
 trader NN I
 , , O
 moving VBG O
@@ -4398,7 +4398,7 @@ massive JJ I
 , , O
 illiquid JJ I
 airline NN I
-holding VBG O
+holding VBG I
 . . O
 
 Analysts NNS I
@@ -4408,7 +4408,7 @@ stock NN I
 might MD O
 lose VB O
 four CD I
-or CC I
+or CC O
 five CD I
 points NNS I
 if IN O
@@ -4440,7 +4440,7 @@ loss NN I
 , , O
 or CC O
 to TO O
-holding VBG O
+holding VBG I
 the DT I
 shares NNS I
 as IN O
@@ -4545,7 +4545,7 @@ its PRP$ I
 share NN I
 purchases NNS I
 , , O
-that WDT I
+that WDT B
 might MD O
 be VB O
 a DT I
@@ -4608,7 +4608,7 @@ Mr. NNP I
 Icahn NNP I
 , , O
 a DT I
-much RB I
+much RB O
 more RBR O
 practiced VBN O
 raider NN I
@@ -4645,7 +4645,7 @@ He PRP I
 confers VBZ O
 big JJ I
 trading NN I
-commissions NNS B
+commissions NNS I
 on IN O
 Wall NNP I
 Street NNP I
@@ -4664,7 +4664,7 @@ might MD O
 not RB O
 get VB O
 a DT I
-very RB I
+very RB O
 good JJ I
 price NN I
 for IN O
@@ -4676,7 +4676,7 @@ say VBP O
 . . O
 
 Especially RB O
-galling JJ O
+galling JJ I
 for IN O
 Mr. NNP I
 Steinhardt NNP I
@@ -4735,7 +4735,7 @@ Hathaway NNP I
 , , O
 are VBP O
 pretty RB O
-strong JJ O
+strong JJ I
 . . O
 
 USAir NNP I
@@ -4749,7 +4749,7 @@ was VBD O
 n't RB O
 exactly RB O
 a DT I
-shining VBG I
+shining VBG O
 example NN I
 of IN O
 shareholder NN I
@@ -4821,7 +4821,7 @@ course NN I
 it PRP I
 would MD O
 be VB O
-highly RB O
+highly RB I
 unusual JJ I
 for IN O
 an DT I
@@ -4856,7 +4856,7 @@ Analysts NNS I
 say VBP O
 USAir NNP I
 has VBZ O
-great JJ O
+great JJ I
 promise NN I
 . . O
 
@@ -4920,7 +4920,7 @@ Piedmont NNP I
 Airlines NNPS I
 , , O
 which WDT I
-it PRP B
+it PRP I
 acquired VBD O
 . . O
 
@@ -4940,7 +4940,7 @@ pummel VB O
 airline NN I
 stocks NNS I
 in IN O
-coming VBG I
+coming VBG O
 months NNS I
 . . O
 
@@ -4977,7 +4977,7 @@ days NNS I
 he PRP I
 says VBZ O
 that IN O
-contrary JJ O
+contrary JJ I
 to TO O
 rumors NNS I
 , , O
@@ -4999,7 +4999,7 @@ he PRP I
 bought VBD O
 USAir NNP I
 stock NN I
-earlier RBR B
+earlier RBR O
 this DT I
 year NN I
 as IN O
@@ -5047,7 +5047,7 @@ are VBP O
 showing VBG O
 gains NNS I
 of IN O
-about IN I
+about IN O
 20 CD I
 % NN I
 , , O
@@ -5073,13 +5073,13 @@ to TO O
 the DT I
 investor NN I
 say VBP O
-that WDT I
+that WDT B
 was VBD O
 an DT I
 experiment NN I
 he PRP I
 is VBZ O
-unlikely JJ O
+unlikely JJ I
 to TO O
 repeat VB O
 . . O
@@ -5151,7 +5151,7 @@ million CD I
 on IN O
 July NNP I
 11 CD I
-, , I
+, , O
 1988 CD I
 , , O
 the DT I
@@ -5160,7 +5160,7 @@ Ashland NNP I
 Ky. NNP I
 , , O
 coal NN I
-mining NN O
+mining NN I
 , , O
 water NN I
 transportation NN I
@@ -5264,7 +5264,7 @@ the DT I
 home NN I
 market NN I
 remained VBD O
-weak JJ O
+weak JJ I
 in IN O
 some DT I
 major JJ I
@@ -5348,14 +5348,14 @@ the DT I
 situation NN I
 could MD O
 look VB O
-different JJ O
+different JJ I
 by IN O
 the DT I
 time NN I
 final JJ I
 results NNS I
 are VBP O
-announced VBN O
+announced VBN I
 early JJ I
 next JJ I
 month NN I
@@ -5373,7 +5373,7 @@ was VBD O
 $ $ I
 2 CD I
 million CD I
-narrower JJR O
+narrower JJR I
 than IN O
 Commodore NNP I
 had VBD O
@@ -5389,7 +5389,7 @@ closed VBD O
 
 Still RB O
 , , O
-even RB I
+even RB O
 results VBZ O
 approaching VBG O
 break-even NN I
@@ -5409,10 +5409,10 @@ $ $ I
 9.6 CD I
 million CD I
 , , O
-or CC I
+or CC O
 30 CD I
 cents NNS I
-a DT B
+a DT I
 share NN I
 , , O
 on IN O
@@ -5441,13 +5441,13 @@ than IN O
 since IN O
 May NNP I
 , , O
-closing VBG O
-yesterday NN I
+closing VBG I
+yesterday NN B
 unchanged JJ O
 at IN O
 $ $ I
 8.875 CD I
-a DT B
+a DT I
 share NN I
 in IN O
 composite JJ I
@@ -5472,7 +5472,7 @@ further RBR O
 because IN O
 the DT I
 loss NN I
-estimate NN O
+estimate NN I
 came VBD O
 after IN O
 the DT I
@@ -5499,10 +5499,10 @@ where WRB O
 its PRP$ I
 personal-computer NN I
 sales NNS I
-have NN O
+have NN I
 been VBN O
 so RB O
-dismal JJ O
+dismal JJ I
 for IN O
 years NNS I
 that IN O
@@ -5530,7 +5530,7 @@ team NN I
 it PRP I
 has VBZ O
 persuaded VBN O
-many RB O
+many RB I
 more JJR I
 dealers NNS I
 to TO O
@@ -5593,7 +5593,7 @@ business NN I
 to TO O
 stay VB O
 sufficiently RB O
-healthy JJ O
+healthy JJ I
 to TO O
 support VB O
 its PRP$ I
@@ -5628,7 +5628,7 @@ because IN O
 it PRP I
 is VBZ O
 n't RB O
-compatible JJ O
+compatible JJ I
 with IN O
 Apple NNP I
 Computer NNP I
@@ -5673,7 +5673,7 @@ market NN I
 The DT I
 Commodore NNP I
 64 CD I
-and CC I
+and CC O
 128 CD I
 , , O
 mainly RB O
@@ -5683,7 +5683,7 @@ children NNS I
 's POS B
 educational JJ I
 software NN I
-and CC I
+and CC O
 games NNS I
 , , O
 had VBD O
@@ -5691,7 +5691,7 @@ surprised VBN O
 market NN I
 researchers NNS I
 by IN O
-continuing VBG O
+continuing VBG I
 to TO O
 produce VB O
 strong JJ I
@@ -5746,7 +5746,7 @@ Stock NN I
 prices NNS I
 closed VBD O
 slightly RB O
-higher JJR O
+higher JJR I
 in IN O
 the DT I
 first JJ I
@@ -5790,12 +5790,12 @@ the DT I
 market NN I
 's POS B
 plunge NN I
-late JJ B
+late JJ I
 Friday NNP I
 and CC O
 its PRP$ I
 rebound NN I
-Monday NNP B
+Monday NNP I
 , , O
 as IN O
 players NNS I
@@ -5826,11 +5826,11 @@ a DT I
 trading NN I
 range NN I
 of IN O
-about IN I
+about IN O
 30 CD I
 points NNS I
 before IN O
-closing VBG O
+closing VBG I
 with IN O
 a DT I
 gain NN I
@@ -5970,7 +5970,7 @@ weeks NNS I
 from IN O
 224.1 CD I
 million CD I
-Tuesday NNP B
+Tuesday NNP I
 . . O
 
 Traders NNS I
@@ -5995,7 +5995,7 @@ of IN O
 October NNP I
 stock-index NN I
 futures NNS I
-and CC I
+and CC O
 options NNS I
 as IN O
 major JJ I
@@ -6028,7 +6028,7 @@ earthquake NN I
 , , O
 which WDT I
 knocked VBD O
-out RP I
+out RP O
 power NN I
 lines NNS I
 and CC O
@@ -6163,7 +6163,7 @@ prices NNS I
 to TO O
 show VB O
 some DT I
-renewed VBN I
+renewed VBN O
 instability NN I
 over IN O
 the DT I
@@ -6249,7 +6249,7 @@ recovered VBD O
 quickly RB O
 and CC O
 turned VBD O
-higher JJR O
+higher JJR I
 because IN O
 of IN O
 expectations NNS I
@@ -6276,7 +6276,7 @@ rates NNS I
 Issues NNS I
 of IN O
 insurance NN I
-brokers NNS B
+brokers NNS I
 were VBD O
 especially RB O
 strong JJ I
@@ -6512,7 +6512,7 @@ to TO O
 Within IN O
 the DT I
 building-materials NNS I
-group VBP I
+group VBP O
 , , O
 Georgia-Pacific NNP I
 climbed VBD O
@@ -6550,7 +6550,7 @@ Industries NNPS I
 gained VBD O
 1 CD I
 3\/4 CD I
-to TO I
+to TO O
 29 CD I
 1\/4 CD I
 , , O
@@ -6662,9 +6662,9 @@ nearby JJ I
 Richmond NNP I
 , , O
 Calif. NNP I
-, , I
+, , O
 was VBD O
-undamaged JJ O
+undamaged JJ I
 . . O
 
 Other JJ I
@@ -6689,7 +6689,7 @@ which WDT I
 went VBD O
 up IN O
 1\/4 CD I
-to TO I
+to TO O
 7 CD I
 5\/8 CD I
 , , O
@@ -6794,7 +6794,7 @@ West NNP I
 Financial NNP I
 fell VBD O
 5\/8 CD I
-to TO I
+to TO O
 29 CD I
 1\/4 CD I
 . . O
@@ -6820,7 +6820,7 @@ of IN O
 the DT I
 session NN I
 before IN O
-closing VBG O
+closing VBG I
 at IN O
 191 CD I
 3\/4 CD I
@@ -6848,7 +6848,7 @@ had VBD O
 offered VBN O
 $ $ I
 300 CD I
-a DT B
+a DT I
 share NN I
 for IN O
 UAL NNP I
@@ -6916,7 +6916,7 @@ its PRP$ I
 recent JJ I
 nosedive NN I
 by IN O
-rising VBG I
+rising VBG O
 3\/4 CD I
 to TO O
 74 CD I
@@ -6952,7 +6952,7 @@ offer NN I
 of IN O
 $ $ I
 120 CD I
-a DT B
+a DT I
 share NN I
 for IN O
 AMR NNP I
@@ -7002,7 +7002,7 @@ estimate NN I
 by IN O
 35 CD I
 cents NNS I
-a DT B
+a DT I
 share NN I
 , , O
 to TO O
@@ -7040,14 +7040,14 @@ cents NNS I
 and CC O
 $ $ I
 1.05 CD I
-a DT B
+a DT I
 share NN I
 , , O
 up IN O
 from IN O
 69 CD I
 cents NNS I
-a DT B
+a DT I
 year NN I
 ago RB O
 . . O
@@ -7069,7 +7069,7 @@ firms NNS I
 lowered VBD O
 their PRP$ I
 1989 CD I
-and CC I
+and CC O
 1990 CD I
 earnings NNS I
 estimates NNS I
@@ -7081,7 +7081,7 @@ its PRP$ I
 third-quarter JJ I
 results NNS I
 proved VBD O
-disappointing JJ O
+disappointing JJ I
 . . O
 
 Trinova NNP I
@@ -7103,7 +7103,7 @@ closing VBG I
 or CC O
 downsizing VBG O
 of IN O
-about IN I
+about IN O
 25 CD I
 % NN I
 of IN O
@@ -7115,7 +7115,7 @@ work NN I
 force NN I
 cut NN I
 of IN O
-about IN I
+about IN O
 1,500 CD I
 over IN O
 three CD I
@@ -7133,7 +7133,7 @@ five-session JJ I
 losing NN O
 streak NN I
 by IN O
-rising VBG I
+rising VBG O
 2.91 CD I
 to TO O
 378.07 CD I
@@ -7199,9 +7199,9 @@ the DT I
 company NN I
 's POS B
 cigarette NN I
-, , I
+, , O
 food NN I
-and CC I
+and CC O
 brewing NN I
 businesses NNS I
 . . O
@@ -7217,7 +7217,7 @@ million CD I
 or CC O
 81 CD I
 cents NNS I
-a DT B
+a DT I
 share NN I
 , , O
 from IN O
@@ -7230,7 +7230,7 @@ million CD I
 or CC O
 67 CD I
 cents NNS I
-a DT B
+a DT I
 share NN I
 . . O
 
@@ -7238,7 +7238,7 @@ Per-share JJ I
 figures NNS I
 have VBP O
 been VBN O
-adjusted VBN O
+adjusted VBN I
 for IN O
 a DT I
 4-for-1 JJ I
@@ -7254,9 +7254,9 @@ The DT I
 New NNP I
 York-based JJ I
 tobacco NN I
-, , I
+, , O
 food NN I
-and CC I
+and CC O
 beer NN I
 concern NN I
 said VBD O
@@ -7300,7 +7300,7 @@ disclosed VBD O
 little RB I
 detailed VBN O
 information NN I
-about IN I
+about IN O
 performance NN I
 by IN O
 major JJ I
@@ -7347,7 +7347,7 @@ billion CD I
 or CC O
 $ $ I
 2.25 CD I
-a DT B
+a DT I
 share NN I
 , , O
 from IN O
@@ -7373,7 +7373,7 @@ Granges NNP I
 Inc. NNP I
 , , O
 citing VBG O
-depressed JJ O
+depressed JJ I
 gold NN I
 prices NNS I
 , , O
@@ -7430,12 +7430,12 @@ cost NN I
 of IN O
 $ $ I
 393 CD I
-an DT B
+an DT I
 ounce NN I
 , , O
 which WDT I
 is VBZ O
-high JJ O
+high JJ I
 by IN O
 industry NN I
 standards NNS I
@@ -7464,7 +7464,7 @@ to TO O
 write VB O
 down RP O
 the DT I
-carrying VBG I
+carrying VBG O
 value NN I
 of IN O
 the DT I
@@ -7508,7 +7508,7 @@ did VBD O
 n't RB O
 say VB O
 what WP I
-impact NN O
+impact NN I
 the DT I
 moves NNS I
 would MD O
@@ -7517,10 +7517,10 @@ on IN O
 total JJ I
 gold NN I
 output NN I
-or CC I
+or CC O
 earnings NNS I
 , , O
-and CC I
+and CC O
 company NN I
 officials NNS I
 were VBD O
@@ -7599,7 +7599,7 @@ of IN O
 % NN I
 and CC O
 more JJR I
-each DT B
+each DT I
 year NN I
 . . O
 
@@ -7613,12 +7613,12 @@ Digital NNP I
 's POS B
 hardware NN I
 is VBZ O
-fragmented JJ O
+fragmented JJ I
 enough RB O
 that IN O
 a DT I
 giant NN I
-such JJ O
+such JJ I
 as IN O
 Computer NNP I
 Associates NNPS I
@@ -7636,7 +7636,7 @@ time NN I
 the DT I
 market NN I
 is VBZ O
-smaller JJR O
+smaller JJR I
 than IN O
 the DT I
 market NN I
@@ -7668,7 +7668,7 @@ its PRP$ I
 machines NNS I
 are VBP O
 typically RB O
-easier JJR O
+easier JJR I
 to TO O
 operate VB O
 , , O
@@ -7741,7 +7741,7 @@ operations NNS I
 
 Wang NNP I
 had VBD O
-previously RB O
+previously RB I
 forecast VBP O
 a DT I
 loss NN I
@@ -7769,7 +7769,7 @@ although IN O
 it PRP I
 expects VBZ O
 a DT I
-profitable JJ I
+profitable JJ O
 fourth JJ I
 quarter NN I
 . . O
@@ -7789,7 +7789,7 @@ million CD I
 or CC O
 eight CD I
 cents NNS I
-a DT B
+a DT I
 share NN I
 , , O
 in IN O
@@ -7804,7 +7804,7 @@ $ $ I
 million CD I
 loss NN I
 from IN O
-discontinued VBN I
+discontinued VBN O
 operations NNS I
 . . O
 
@@ -7871,7 +7871,7 @@ sets VBZ O
 a DT I
 price NN I
 range NN I
-and CC I
+and CC O
 holders NNS I
 give VBP O
 a DT I
@@ -7881,9 +7881,9 @@ that DT I
 range NN I
 at IN O
 which WDT I
-they PRP B
+they PRP I
 're VBP O
-willing JJ O
+willing JJ I
 to TO O
 sell VB O
 their PRP$ I
@@ -7922,7 +7922,7 @@ repurchase NN I
 offer NN I
 , , O
 representing VBG O
-about IN I
+about IN O
 9 CD I
 % NN I
 of IN O
@@ -7936,10 +7936,10 @@ established VBN O
 a DT I
 range NN I
 of IN O
-between IN I
+between IN O
 $ $ I
 60 CD I
-and CC I
+and CC O
 $ $ I
 65 CD I
 for IN O
@@ -7997,7 +7997,7 @@ the DT I
 seven CD I
 million CD I
 shares NNS I
-next JJ B
+next JJ I
 Thursday NNP I
 . . O
 
@@ -8008,7 +8008,7 @@ purchased VBN O
 will MD O
 be VB O
 returned VBN O
-to TO I
+to TO O
 holders NNS I
 . . O
 
@@ -8103,7 +8103,7 @@ million CD I
 or CC O
 $ $ I
 1.04 CD I
-a DT B
+a DT I
 share NN I
 , , O
 compared VBN O
@@ -8115,7 +8115,7 @@ million CD I
 or CC O
 $ $ I
 1.19 CD I
-a DT B
+a DT I
 share NN I
 , , O
 a DT I
@@ -8150,7 +8150,7 @@ about IN O
 half VB O
 its PRP$ I
 long-term JJ I
-and CC I
+and CC O
 medium-term JJ I
 loans NNS I
 to TO O
@@ -8267,7 +8267,7 @@ be VB O
 sold VBN O
 on IN O
 the DT I
-open JJ I
+open JJ O
 market NN I
 , , O
 Enron NNP I
@@ -8304,7 +8304,7 @@ National NNP I
 Power NNP I
 will MD O
 be VB O
-responsible JJ O
+responsible JJ I
 for IN O
 70 CD I
 % NN I
@@ -8337,7 +8337,7 @@ million CD I
 or CC O
 41 CD I
 cents NNS I
-a DT B
+a DT I
 share NN I
 , , O
 primarily RB O
@@ -8368,7 +8368,7 @@ million CD I
 or CC O
 $ $ I
 1.07 CD I
-a DT B
+a DT I
 share NN I
 . . O
 
@@ -8414,7 +8414,7 @@ March NNP I
 
 The DT I
 communications NNS I
-and CC I
+and CC O
 entertainment NN I
 company NN I
 said VBD O
@@ -8498,7 +8498,7 @@ and CC O
 gained VBD O
 substantial JJ I
 operating NN I
-and CC I
+and CC O
 financial JJ I
 flexibility NN I
 through IN O
@@ -8544,7 +8544,7 @@ million CD I
 or CC O
 87 CD I
 cents NNS I
-a DT B
+a DT I
 share NN I
 , , O
 for IN O
@@ -8611,7 +8611,7 @@ hoses NNS I
 and CC O
 other JJ I
 industrial JJ I
-and CC I
+and CC O
 automotive JJ I
 parts NNS I
 . . O
@@ -8622,7 +8622,7 @@ plastics NNS I
 together RB O
 account VBP O
 for IN O
-about IN I
+about IN O
 42 CD I
 % NN I
 of IN O
@@ -8693,7 +8693,7 @@ million CD I
 or CC O
 $ $ I
 1.13 CD I
-a DT B
+a DT I
 share NN I
 , , O
 in IN O
@@ -8720,7 +8720,7 @@ million CD I
 or CC O
 57 CD I
 cents NNS I
-a DT B
+a DT I
 share NN I
 , , O
 a DT I
@@ -8789,7 +8789,7 @@ Odeon NNP I
 Finanziaria NNP I
 , , O
 a DT I
-financially RB I
+financially RB O
 troubled JJ I
 Italian JJ I
 TV NN I
@@ -8835,12 +8835,12 @@ the DT I
 company NN I
 to TO O
 continue VB O
-operating VBG O
+operating VBG I
 . . O
 
 It PRP I
 's VBZ O
-sort NN O
+sort NN I
 of IN O
 a DT I
 Chapter NN I
@@ -8872,7 +8872,7 @@ Odeon NNP I
 , , O
 which WDT I
 draws VBZ O
-about IN I
+about IN O
 3 CD I
 % NN I
 of IN O
@@ -8969,7 +8969,7 @@ Italy NNP I
 's POS B
 Supreme NNP I
 Court NNP I
-this DT B
+this DT I
 year NN I
 ordered VBD O
 Parliament NNP I
@@ -8995,7 +8995,7 @@ to TO O
 be VB O
 far RB O
 more RBR O
-favorable JJ O
+favorable JJ I
 to TO O
 own VB O
 a DT I
@@ -9067,7 +9067,7 @@ and CC O
 just RB O
 keeping VBG O
 the DT I
-public RB I
+public RB O
 informed VBN O
 has VBZ O
 helped VBN O
@@ -9100,7 +9100,7 @@ television NN I
 stations NNS I
 featured VBD O
 people NNS I
-holding VBG O
+holding VBG I
 up IN O
 phone NN I
 books NNS I
@@ -9153,7 +9153,7 @@ Angeles NNP I
 , , O
 said VBD O
 television NN I
-and CC I
+and CC O
 radio NN I
 stations NNS I
 in IN O
@@ -9161,7 +9161,7 @@ San NNP I
 Francisco NNP I
 played VBD O
 a DT I
-`` `` I
+`` `` O
 very RB O
 positive JJ I
 role NN I
@@ -9181,7 +9181,7 @@ and CC O
 by IN O
 giving VBG O
 out RP O
-the IN I
+the IN O
 Red NNP I
 Cross NNP I
 number NN I
@@ -9336,7 +9336,7 @@ Administration NNP I
 board NN I
 of IN O
 contract NN I
-appeals NNS O
+appeals NNS I
 directed VBD O
 NASA NNP I
 to TO O
@@ -9393,7 +9393,7 @@ million CD I
 or CC O
 $ $ I
 1.27 CD I
-a DT B
+a DT I
 share NN I
 , , O
 exceeding VBG O
@@ -9418,7 +9418,7 @@ million CD I
 or CC O
 $ $ I
 1.21 CD I
-a DT B
+a DT I
 share NN I
 . . O
 
@@ -9525,7 +9525,7 @@ million CD I
 or CC O
 $ $ I
 3.34 CD I
-a DT B
+a DT I
 share NN I
 , , O
 from IN O
@@ -9536,13 +9536,13 @@ million CD I
 or CC O
 $ $ I
 3.31 CD I
-a DT B
+a DT I
 share NN I
 . . O
 
 Revenue NN I
 was VBD O
-flat JJ O
+flat JJ I
 at IN O
 $ $ I
 2.59 CD I
@@ -9558,7 +9558,7 @@ by IN O
 declining VBG I
 sales NNS I
 and CC O
-falling VBG I
+falling VBG O
 chemical NN I
 prices NNS I
 , , O
@@ -9625,7 +9625,7 @@ but CC O
 it PRP I
 was VBD O
 n't RB O
-sufficient JJ O
+sufficient JJ I
 to TO O
 offset VB O
 the DT I
@@ -9705,7 +9705,7 @@ quarter NN I
 of IN O
 1988 CD I
 , , O
-adjusted VBN O
+adjusted VBN I
 for IN O
 a DT I
 stock NN I
@@ -9741,7 +9741,7 @@ candidate NN I
 rose VBD O
 $ $ I
 2.125 CD I
-a DT B
+a DT I
 share NN I
 to TO O
 close VB O
@@ -9806,7 +9806,7 @@ to TO O
 push VB O
 the DT I
 City NNP I
-Council NNP O
+Council NNP I
 harder JJR O
 to TO O
 pass VB O
@@ -9837,7 +9837,7 @@ weeks NNS I
 after IN O
 its PRP$ I
 own JJ I
-anticipated VBN I
+anticipated VBN O
 quake NN I
 , , O
 while IN O
@@ -9894,7 +9894,7 @@ sheriffs NNS I
 on IN O
 alert JJ I
 , , O
-ready JJ O
+ready JJ I
 to TO O
 send VB O
 in IN O
@@ -9933,7 +9933,7 @@ Los NNP I
 Angeles NNP I
 bank NN I
 manager NN I
-forked JJ O
+forked JJ I
 over IN O
 $ $ I
 150,000 CD I
@@ -9982,7 +9982,7 @@ of IN O
 Puerto NNP I
 Rico NNP I
 , , O
-who WP I
+who WP B
 were VBD O
 helping VBG O
 Huricane NNP I
