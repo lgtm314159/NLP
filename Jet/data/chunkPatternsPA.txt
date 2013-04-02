@@ -1,0 +1,130 @@
+pattern set names;
+
+enamex		:= [ENAMEX TYPE=NameType];
+
+when enamex	add [constit cat=name pa=[head=NameType number=singular]];
+
+//  pattern set for noun and verb groups
+
+pattern set chunks;
+
+// Temporal expressoin patterns. They appear first in order to take higher
+// precedence over proper noun and ngroup.
+
+temporal-expr := clock-time | day-of-week | date-of-month | month;
+
+clock-time := [constit cat=q] ":" [constit cat=q] "pm" |
+    [constit cat=q] ":" [constit cat=q] "am";
+
+date-of-month := month [constit cat=q] | [constit cat=q] "of" month;
+
+month := "January" | "Jan" | "February" | "Feb" | "March" | "Mar" |
+    "April" | "Apr" | "May" | "June" | "Jun" | "July" | "Jul" | "August" |
+    "Aug" | "September" | "Sep" | "October" | "Oct" | "November" | "Nov" |
+    "December" | "Dec";
+
+day-of-week := "Monday" | "Mon" | "Tuesday" | "Tue" | "Wednesday" | "Wed" |
+    "Thursday" | "Thu" | "Friday" | "Fri" | "Saturday" | "Sat" | "Sunday" | "Sun";
+
+// This doesn't work as intended yet... need to look more into this.
+date-of-year := [constit cat=q] ":" [constit cat=q] ":" [constit cat=q] |
+    [constit cat=q] "/" [constit cat=q] "/" [constit cat=q] |
+    date-of-month "," [constit cat=q] | date-of-month [constit cat=q];
+
+when temporal-expr add [constit cat=temporal-expr-group];
+
+// Patterns for greetings.
+
+greeting := "Hey" | "hey" | "Hello" | "hello" | "Hola" | "holo" | "Goodbye" |
+    "goodbye" | "Hi" | "hi";
+
+when greeting add [constit cat=greet-group];
+
+// Patterns for addresses.
+
+address-phrase := [constit cat=q] proper-noun facility;
+
+facility := "Road" | "Rd" |  "Street" | "Str" | "Avenue" | "Ave" | "Lane";
+
+when address-phrase add [constit cat=addr-group];
+
+
+//  pattern for noun groups
+
+//ng := 		det-pos? [constit cat=adj]* [constit cat=n number=singular]* [constit cat=n pa=PA-noun] |
+//		[constit cat=pro pa=PA-noun];
+
+ng := noun-phrase | proper-noun-phrase | pro-phrase |
+    proper-noun-phrase noun-phrase |
+    noun-phrase proper-noun-phrase;
+
+noun-phrase := //[constit cat=n] "and" [constit cat=n];
+    det-pos? [constit cat=q]? adj-phrase* proper-noun* [constit cat=n number=singular]* [constit cat=n pa=PA-noun] conj-noun*;
+
+proper-noun-phrase := 
+  	det-pos? [constit cat=q]? adj-phrase* proper-noun* proper-noun+ conj-proper-noun*;
+
+pro-phrase :=
+		[constit cat=pro pa=PA-noun] conj-pro*;
+
+//det-pos	    :=	[constit cat=det] |
+//		[constit cat=det]? [constit cat=n number=singular] "'s";
+
+// Added possession form for proper nouns. Also added adj before the nouns.
+det-pos	:=	pre-det? [constit cat=det] |
+    pre-det? [constit cat=det]? [constit cat=adj]* [constit cat=n number=singular] "'s" |
+    pre-det? [constit cat=det]? [constit cat=adj]* proper-noun "'s";
+
+pre-det := "such" | "what" | "rather" | "quite";
+
+proper-noun :=	([token case=cap] | [undefinedCap])+;
+
+//proper-noun := [ENAMEX TYPE=ORGANIZATION]+ | [ENAMEX TYPE=PERSON]+ |
+//    [ENAMEX TYPE=LOCATION]+;
+
+// Quantifier of colloquial form.
+quant-colloq := [constit cat=n] "of" | [constit cat=q] "of" | proper-noun "of";
+
+conj-noun := "and" [constit cat=n] | "and" det-pos? [constit cat=q]? adj-phrase* proper-noun* [constit cat=n number=singular]* [constit cat=n];
+
+conj-proper-noun := "and" proper-noun+;
+
+conj-pro := "and" [constit cat=pro pa=PA-noun];
+
+adj-phrase := [constit cat=adj] conj-adj* | part-phrase;
+
+part-phrase := [constit cat=adv]* [constit cat=ven]+ | [constit cat=adv]* [constit cat=ving]+;
+
+conj-adj := [constit cat=cconj] [constit cat=adj];
+
+when ng		add [constit cat=ngroup pa=PA-noun];
+
+name-ng :=	"the"? ([token case=cap])? (".")? [constit cat=name pa=PA-noun];
+
+when name-ng	add [constit cat=ngroup isName=true pa=PA-noun];
+
+//  patterns for active verb groups
+
+vg :=		[constit cat=tv pa=PA-verb] |
+		[constit cat=w] vg-inf |
+		tv-vbe vg-ving |
+		tv-vhave vg-ven;
+
+vg-inf :=	[constit cat=v pa=PA-verb] |
+		"be" vg-ving;
+
+vg-ven :=	[constit cat=ven pa=PA-verb] |
+		"been" vg-ving;
+
+vg-ving :=	[constit cat=ving pa=PA-verb];
+
+tv-vbe :=	"is" | "are" | "was" | "were";
+
+tv-vhave :=	"has" | "have" | "had";
+
+when vg		add [constit cat=vgroup pa=PA-verb];
+
+vg-pass :=	tv-vbe [constit cat=ven pa=PA-verb] |
+		[constit cat=w] "not"? "be" [constit cat=ven pa=PA-verb];
+
+when vg-pass	add [constit cat=vgroup-pass pa=PA-verb];

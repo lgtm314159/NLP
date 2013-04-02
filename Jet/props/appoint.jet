@@ -1,0 +1,11 @@
+# JET properties file
+Jet.dataPath	     = data
+EnglishLex.fileName1 = Jet4.dict
+Tags.fileName	     = pos_hmm.txt
+NameTags.fileName    = MUCnameHMM.txt
+Concepts.fileName    = appointConcepts.hrc
+Pattern.fileName1    = chunkPatternsPA.txt
+Pattern.fileName2    = appointPatterns.txt
+JetTest.fileName     = appointments.txt
+#
+processSentence  = tokenize, lexLookup, pruneTags, tagNames, pat(names), pat(chunks), pat(appoint)

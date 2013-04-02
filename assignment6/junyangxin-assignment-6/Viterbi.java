@@ -25,8 +25,6 @@ public class Viterbi {
 
   public static void main(String[] args) throws IOException {
     Viterbi v = new Viterbi();
-    v.tagWithViterbiUsingModel1Simple();
-    v.tagWithViterbiUsingModel1Complex();
     v.tagWithViterbiUsingModel8Simple();
     v.tagWithViterbiUsingModel8Complex();
   }
@@ -49,7 +47,8 @@ public class Viterbi {
         if (prevLine != null) {
           features[6] = "next=" + strs[0];
           features[7] = "nextPos=" + strs[1];
-          features[8] = "nextTag=" + strs[2];
+          //features[8] = "nextTag=" + strs[2];
+          features[8] = "nextTag=null";
           
           // Add to the posterior probability matrix.
           String allOutcomes = m.getAllOutcomes(m.eval(features));
@@ -69,7 +68,8 @@ public class Viterbi {
           features = new String[9];
           features[0] = "prev=" + prevLine[0];
           features[1] = "prevPos=" + prevLine[1];
-          features[2] = "prevTag=" + prevLine[2];
+          //features[2] = "prevTag=" + prevLine[2];
+          features[2] = "prevTag=null";
         } else {
           features = new String[9];
           features[0] = "prev=null";
@@ -124,12 +124,13 @@ public class Viterbi {
         if (prevLine != null) {
           features[6] = "next=" + strs[0];
           features[7] = "nextPos=" + strs[1];
-          features[8] = "nextTag=" + strs[2];
+          //features[8] = "nextTag=" + strs[2];
+          features[8] = "nextTag=null";
           // Add to the posterior probability matrix.
           LinkedList<LinkedList<Double>> l = new LinkedList<LinkedList<Double>>();
-          if (features[9].isEmpty()) {
+          if (!features[2].equals("prevTag=null")) {
             for (int i = 1; i <= 3; ++i) {
-              features[9] = "prevState=" + states.get(i);
+              features[2] = "prevTag=" + states.get(i);
               l.add(calcPostProb(m, features));
             }
           } else {
@@ -138,17 +139,15 @@ public class Viterbi {
           probMatrixComplex.add(l);
           
           // Make features for the current line.
-          features = new String[10];
+          features = new String[9];
           features[0] = "prev=" + prevLine[0];
           features[1] = "prevPos=" + prevLine[1];
-          features[2] = "prevTag=" + prevLine[2];
-          features[9] = "";
+          features[2] = "prevTag=";
         } else {
-          features = new String[10];
+          features = new String[9];
           features[0] = "prev=null";
           features[1] = "prevPos=null";
           features[2] = "prevTag=null";
-          features[9] = "prevState=null";
         }
         features[3] = "current=" + strs[0];
         features[4] = "pos=" + strs[1];
@@ -161,9 +160,9 @@ public class Viterbi {
 
         // Add to the posterior probability matrix.
         LinkedList<LinkedList<Double>> l = new LinkedList<LinkedList<Double>>();
-        if (features[9].isEmpty()) {
+        if (!features[2].equals("prevTag=null")) {
           for (int i = 1; i <= 3; ++i) {
-            features[9] = "prevState=" + states.get(i);
+            features[2] = "prevTag=" + states.get(i);
             l.add(calcPostProb(m, features));
           }
         } else {
@@ -179,6 +178,7 @@ public class Viterbi {
     out.flush();
   }
 
+/*
   public void tagWithViterbiUsingModel1Simple() throws IOException {
     GISModel m =
         (GISModel) new SuffixSensitiveGISModelReader(new File("model1")).getModel();
@@ -249,6 +249,7 @@ public class Viterbi {
     }
     out.flush();
   }
+*/
 
   private void viterbiSimple() throws IOException {
     int t = probMatrixSimple.size();
@@ -311,7 +312,7 @@ public class Viterbi {
         double max = 0;
         for (int k = 1; k <= 3; ++k) {
           double tmp = vMatrix[k][i - 1] *
-              probMatrixComplex.get(i).get(j - 1).get(k - 1);
+              probMatrixComplex.get(i).get(k - 1).get(j - 1);
           if (tmp > max) {
             max = tmp;
             backPtr[j][i] = k;

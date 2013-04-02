@@ -16,18 +16,12 @@ public class Tagger {
     tagger.tagWithModel7();
     tagger.tagWithModel8();
     Viterbi v = new Viterbi();
-    v.tagWithViterbiUsingModel1Simple();
-    v.tagWithViterbiUsingModel1Complex();
     v.tagWithViterbiUsingModel8Simple();
     v.tagWithViterbiUsingModel8Complex();
     for (int i = 0; i < 8; ++i) {
       System.out.print("Model" + (i + 1) + ": ");
       tagger.evaluate("test.txt", "results" + (i + 1));
     }
-    System.out.print("Model1 with Viterbi-simple: ");
-    tagger.evaluate("test.txt", "resultsVitModel1Simple");
-    System.out.print("Model1 with Viterbi-complex: ");
-    tagger.evaluate("test.txt", "resultsVitModel1Complex");
     System.out.print("Model8 with Viterbi-simple: ");
     tagger.evaluate("test.txt", "resultsVitModel8Simple");
     System.out.print("Model8 with Viterbi-complex: ");
@@ -43,8 +37,6 @@ public class Tagger {
     tagger.produceNgroups("results6", "resNgroups6");
     tagger.produceNgroups("results7", "resNgroups7");
     tagger.produceNgroups("results8", "resNgroups8");
-    tagger.produceNgroups("resultsVitModel1Simple", "resNgroupsVitModel1Simple");
-    tagger.produceNgroups("resultsVitModel1Complex", "resNgroupsVitModel1Complex");
     tagger.produceNgroups("resultsVitModel8Simple", "resNgroupsVitModel8Simple");
     tagger.produceNgroups("resultsVitModel8Complex", "resNgroupsVitModel8Complex");
     
@@ -52,10 +44,6 @@ public class Tagger {
       System.out.print("Measures of model" + (i + 1) + ": ");
       tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroups" + (i + 1));
     }
-    System.out.print("Measures of model1 with Viterbi-simple: ");
-    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroupsVitModel1Simple");
-    System.out.print("Measures of model1 with Viterbi-complex: ");
-    tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroupsVitModel1Complex");
     System.out.print("Measures of model8 with Viterbi-simple: ");
     tagger.calcNgroupPrecisionAndRecall("testNgroups", "resNgroupsVitModel8Simple");
     System.out.print("Measures of model8 with Viterbi-complex: ");
@@ -420,6 +408,7 @@ public class Tagger {
     String line;
     String[] prevLine = null;
     String[] features = null;
+    String prevTag = null;
     while ((line = br.readLine()) != null) {
       if (!line.isEmpty()) { 
         String[] strs = line.split(" ");
@@ -427,15 +416,18 @@ public class Tagger {
           // Tag the previous line.
           features[14] = "next=" + strs[0];
           features[15] = "nextPos=" + strs[1];
-          features[16] = "nextTag=" + strs[2];
+          //features[16] = "nextTag=" + strs[2];
+          features[16] = "nextTag=null";
           String tag = m.getBestOutcome(m.eval(features));
+          prevTag = tag;
           out.println(prevLine[0] + " " + prevLine[1] + " " + tag);
           
           // Make featuresf for the current line.
           features = new String[17];
           features[0] = "prev=" + prevLine[0];
           features[1] = "prevPos=" + prevLine[1];
-          features[2] = "prevTag=" + prevLine[2];
+          //features[2] = "prevTag=" + prevLine[2];
+          features[2] = "prevTag=" + prevTag; 
         } else {
           features = new String[17];
           features[0] = "prev=null";
@@ -526,14 +518,7 @@ public class Tagger {
           ++correct;
       }
     }
-    /*
-    double recall = ((double) correct) / total; 
-    double precision = ((double) correct) / total; 
-    double f1 = 2 * precision * recall / (precision + recall);
-    double fPoint5 =
-        (1 + 0.5 * 0.5) * precision * recall / (0.5 * 0.5 * precision + recall);
-    */
-    System.out.println("Correct tags: " + correct);
+    System.out.println("correct tags " + correct);
   }
 
   private void tagWithModel8() throws IOException {
@@ -548,6 +533,7 @@ public class Tagger {
     String line;
     String[] prevLine = null;
     String[] features = null;
+    String prevTag = null;
     while ((line = br.readLine()) != null) {
       if (!line.isEmpty()) { 
         String[] strs = line.split(" ");
@@ -555,15 +541,18 @@ public class Tagger {
           // Tag the previous line.
           features[6] = "next=" + strs[0];
           features[7] = "nextPos=" + strs[1];
-          features[8] = "nextTag=" + strs[2];
+          //features[8] = "nextTag=" + strs[2];
+          features[8] = "nextTag=null";
           String tag = m.getBestOutcome(m.eval(features));
+          prevTag = tag;
           out.println(prevLine[0] + " " + prevLine[1] + " " + tag);
           
           // Make featuresf for the current line.
           features = new String[9];
           features[0] = "prev=" + prevLine[0];
           features[1] = "prevPos=" + prevLine[1];
-          features[2] = "prevTag=" + prevLine[2];
+          //features[2] = "prevTag=" + prevLine[2];
+          features[2] = "prevTag=" + prevTag; 
         } else {
           features = new String[9];
           features[0] = "prev=null";
