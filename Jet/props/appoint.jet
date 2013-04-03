@@ -6,6 +6,7 @@ NameTags.fileName    = MUCnameHMM.txt
 Concepts.fileName    = appointConcepts.hrc
 Pattern.fileName1    = chunkPatternsPA.txt
 Pattern.fileName2    = appointPatterns.txt
-JetTest.fileName     = appointments.txt
+#JetTest.fileName     = appointments.txt
+JetTest.fileName     = ws960112am.txt
 #
 processSentence  = tokenize, lexLookup, pruneTags, tagNames, pat(names), pat(chunks), pat(appoint)
