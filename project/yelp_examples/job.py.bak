@@ -1,0 +1,37 @@
+from mrjob.job import MRJob
+import mrjob
+import re
+
+WORD_RE = re.compile(r"[\w']+")
+
+class MRWordFreqCount(MRJob):
+
+  INPUT_PROTOCOL = mrjob.protocol.JSONValueProtocol
+
+  def mapper(self, _, data):
+    if data['type'] != 'review':
+      return
+
+    """
+    for word in WORD_RE.findall(line):
+        yield (word.lower(), 1)
+    """
+    # normalize words by lowercasing and dropping non-alpha
+    # characters
+    norm = lambda word: re.sub('[^a-z]', '', word.lower())
+    # only include a word once per-review (which de-emphasizes
+    # proper nouns)
+    words = set(norm(word) for word in data['text'].split())
+    for word in words:
+      yield word, data['stars']
+    """
+    def reducer(self, word, counts):
+      yield (word, sum(counts))
+    """
+
+  def reducer(self, word, ratings):
+    yield (word, sum(ratings))
+  
+if __name__ == '__main__':
+  MRWordFreqCount().run()
+
