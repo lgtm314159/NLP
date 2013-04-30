@@ -2,7 +2,7 @@ from mrjob.job import MRJob
 from mrjob.protocol import JSONValueProtocol
 import re
 
-MINIMUM_OCCURENCES = 1000
+MINIMUM_OCCURENCES = 0
 
 def avg_and_total(ratings):
   count = 0;
