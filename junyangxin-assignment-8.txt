@@ -1,0 +1,42 @@
+1. The PCFG is listed below:
+s = np vp (1.0)
+vp = v np pp (2/5=0.4)
+vp = v np (3/5=0.6)
+np = n (12/15=0.8)
+np = n pp (0.2)
+pp = p np (1)
+
+The first parse is:
+(s (np (n Delis)) (vp (v serve) (np (n pizza) (pp (p with) (np (n relish))))) 
+and its probability is:
+1 x 0.8 x 0.6 x 0.2 x 1 x 0.8 = 0.076
+
+The second parse is:
+(s (np (n Delis)) (vp (v serve) (np (n pizza)) (pp (p with) (np (n relish)))))
+and its probability is:
+1 x 0.8 x 0.4 x 0.8 x 1 x 0.8 = 0.2048
+
+So the conclusion is that the second parse will be chosen, which is the more sensible one.
+
+2.
+(a) The revised PCFG vp productions are:
+vp(like) = v np (2/2 = 1)
+vp(like) = v np pp (0/2 = 0)
+vp(serve) = v np (1/3 = 0.333)
+vp(serve) = v np pp (2/3 = 0.667)
+
+So the probability of the first parse is:
+1 x 0.8 x 0.333 x 0.2 x 1 x 0.8 = 0.043
+The probability of the second parse is:
+1 x 0.8 x 0.667 x 0.8 x 1 x 0.8 = 0.342
+
+(b) For "Men like pizza with relish", the two parses are structually identical to the ones of "Delis serve pizza with relish", so the non-lexicalized probabilities of the two parses are the same as the ones of "Delis serve pizza with relish", which are 0.076 and 0.2048 respectively.
+The two parses are listed below:
+(s (np (n Men)) (vp (v like) (np (n pizza) (pp (p with) (np (n relish))))) 
+(s (np (n Men)) (vp (v like) (np (n pizza)) (pp (p with) (np (n relish)))))
+The lexical probability of the first parse is:
+1 x 0.8 x 1 x 0.2 x 1 x 0.8 = 0.128
+The lexical probability of the second parse is:
+1 x 0.8 x 0 x 0.8 x 1 x 0.8 = 0
+So the correct one will be chosen as well.
+
