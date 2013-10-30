@@ -24,5 +24,4 @@ class ReviewCategorizer(object):
       reviews.close()
 
 if __name__ == '__main__':
-  ReviewCategorizer('reviews/sortedCategoryReview.json').categorizeReview()
-
+  ReviewCategorizer('reviews/sorted_category_reviews.json').categorizeReview()
